@@ -10,7 +10,7 @@
 
 printf "%10s%10s%10s%12s\n" Method basis-set "#BS" "E[Ha]" > performance.dat
 
-for m in HF SVWN PBEPBE PBE1PBE 
+for m in METHODS
 do
 	print
 	for bs in STO-3G cc-pVDZ cc-pVTZ cc-pVQZ 
@@ -18,7 +18,7 @@ do
 		mkdir -p $m/$bs
 		cat <<EOF >> $m/$bs/input.com
 
-%nproc=4
+%nproc=2
 %mem=400MB
 # METHOD BS
 # sp scf=tight 
