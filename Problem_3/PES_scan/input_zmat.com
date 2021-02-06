@@ -1,6 +1,6 @@
 %nproc=4
 %mem=400MB
-# MP2 6-31G(d,p) scf=tight scan
+# HF 6-31G(d,p) scf=tight scan
 
 h3o+ scan along umbrella mode
 
@@ -11,6 +11,6 @@ H 1 a 2 HOX
 H 1 a 2 HOX 3  120.
 H 1 a 2 HOX 3 -120.
 
-a=0.961
+a=OH
 HOX 135. 45 -1.
 
