@@ -16,7 +16,7 @@ do
 	for bs in STO-3G cc-pVDZ cc-pVTZ cc-pVQZ 
 	do 
 		mkdir -p $m/$bs
-		cat <<EOF >> $m/$bs/input.com
+		cat <<EOF > $m/$bs/input.com
 
 %nproc=2
 %mem=400MB
