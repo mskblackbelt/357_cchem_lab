@@ -5,7 +5,10 @@
 
 # Created by MM / NYC Feb 2019
 
+# Ensure all commands begin in he directory containing the script
+cd "$(dirname "${BASH_SOURCE[0]}")"
 
+# Run rough scan by 1 angstrom first
 for d in `seq -f "%3.2f" 0.7 0.1 1.3`
 do 
 	echo "running position " $d
@@ -16,6 +19,7 @@ do
 	cd ../
 done
 
+# Run fine scan near where we know the minimum to be
 for d in `seq -f "%3.2f" 0.85 0.02 0.95`
 do 
 	echo "running position " $d
@@ -26,9 +30,8 @@ do
 	cd ../
 done
 
+# Output all values to file
 printf "%5s%12s\n" dist "E[Ha]" > dist_E.dat
-
-
 
 for i in dist_[01]* 
 	do 
