@@ -12,7 +12,7 @@ cd "$(dirname "${BASH_SOURCE[0]}")"
 for d in `seq -f "%3.2f" 0.7 0.1 1.3`
 do 
 	echo "running position " $d
-	mkdir dist_$d 
+	mkdir -p dist_$d 
 	sed -e "s/DIST/$d/g" input.temp > dist_$d/input.com 
 	cd dist_$d
 	g16 input.com > input.log
@@ -23,7 +23,7 @@ done
 for d in `seq -f "%3.2f" 0.85 0.02 0.95`
 do 
 	echo "running position " $d
-	mkdir dist_$d 
+	mkdir -p dist_$d 
 	sed -e "s/DIST/$d/g" input.temp > dist_$d/input.com 
 	cd dist_$d
 	g16 input.com > input.log
